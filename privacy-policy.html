@@ -170,7 +170,7 @@ Jika Anda tidak ingin data keuangan Anda dipakai untuk pelatihan atau berpotensi
 <table>
 <tr><th>Cara</th><th>Yang terhapus</th></tr>
 <tr><td>Menghapus satu catatan di dalam aplikasi</td><td>Catatan tersebut, seketika dan permanen</td></tr>
-<tr><td><em>Pengaturan → Hapus Semua Data Aplikasi</em></td><td>Seluruh data keuangan, seluruh riwayat chat beserta foto di dalamnya, dan kunci API Gemini yang tersimpan. Dompet dan kategori bawaan dibuat ulang agar aplikasi tetap dapat digunakan.</td></tr>
+<tr><td><em>Pengaturan → Hapus Semua Data Aplikasi</em></td><td>Seluruh data keuangan, seluruh riwayat chat beserta foto di dalamnya, kunci API Gemini yang tersimpan, serta nama tampilan dan foto profil maupun foto latar yang Anda pilih. Dompet dan kategori bawaan dibuat ulang agar aplikasi tetap dapat digunakan.</td></tr>
 <tr><td>Menghapus (uninstall) aplikasi</td><td>Seluruh basis data dan preferensi lokal</td></tr>
 </table>
 <p><strong>Satu pengecualian yang disengaja:</strong> Hapus Semua Data Aplikasi tidak mematikan persetujuan AI Anda. Menghapus data bukanlah menarik persetujuan, dan mematikannya secara diam-diam akan membuat Anda dihadang dialog persetujuan yang tidak Anda minta pada penggunaan berikutnya. Untuk menarik persetujuan, gunakan sakelar <em>Berbagi Data AI</em> di Pengaturan.</p>
@@ -201,6 +201,7 @@ Jika Anda tidak ingin data keuangan Anda dipakai untuk pelatihan atau berpotensi
 <li>Kunci API Gemini dienkripsi dengan Android Keystore (AES-GCM) atau iOS Keychain</li>
 <li>Seluruh komunikasi jaringan menggunakan HTTPS</li>
 <li>Kunci aplikasi dengan biometrik tersedia dan dapat Anda aktifkan</li>
+<li>Saat kunci biometrik aktif, Android menonaktifkan tangkapan layar dan menyembunyikan pratinjau aplikasi di daftar aplikasi terbaru, sehingga isi layar tidak terbaca dari sana tanpa membuka kunci</li>
 </ul>
 <div class="box">
 <strong>Keterbatasan yang kami sampaikan secara terbuka.</strong> Basis data itu sendiri belum dienkripsi seluruhnya. Perlindungan di atas efektif terhadap kebocoran lewat cadangan cloud dan terhadap perangkat yang hilang dalam keadaan terkunci. Perlindungan tersebut <strong>tidak</strong> melindungi dari perangkat yang di-root atau di-jailbreak, maupun dari ekstraksi forensik saat perangkat dalam keadaan terbuka. Kami menyarankan Anda mengaktifkan kunci layar perangkat dan kunci biometrik aplikasi.
@@ -372,7 +373,7 @@ If you do not want your financial data used for training or potentially read by 
 <table>
 <tr><th>Action</th><th>What is deleted</th></tr>
 <tr><td>Deleting an individual record in the app</td><td>That record, immediately and permanently</td></tr>
-<tr><td><em>Settings → Clear All App Data</em></td><td>All financial data, all chat history including the photos in it, and the stored Gemini API key. Default wallets and categories are recreated so the app remains usable.</td></tr>
+<tr><td><em>Settings → Clear All App Data</em></td><td>All financial data, all chat history including the photos in it, the stored Gemini API key, and your display name along with any profile and background photos you chose. Default wallets and categories are recreated so the app remains usable.</td></tr>
 <tr><td>Uninstalling the app</td><td>The entire local database and preferences</td></tr>
 </table>
 <p><strong>One deliberate exception:</strong> Clear All App Data does not turn off your AI consent. Deleting data is not the same as withdrawing consent, and silently revoking it would confront you with a consent dialog you never asked for on next use. To withdraw consent, use the <em>AI Data Sharing</em> switch in Settings.</p>
@@ -403,6 +404,7 @@ If you do not want your financial data used for training or potentially read by 
 <li>The Gemini API key is encrypted with Android Keystore (AES-GCM) or the iOS Keychain</li>
 <li>All network communication uses HTTPS</li>
 <li>An optional biometric app lock is available</li>
+<li>While the biometric lock is on, Android suppresses screenshots and the app's preview in the recent-apps list, so its contents cannot be read from there without unlocking</li>
 </ul>
 <div class="box">
 <strong>A limitation we state openly.</strong> The database itself is not yet fully encrypted. The measures above are effective against cloud-backup leaks and against a lost device that is locked. They do <strong>not</strong> protect against a rooted or jailbroken device, or forensic extraction while the device is unlocked. We recommend enabling your device screen lock and the app's biometric lock.
