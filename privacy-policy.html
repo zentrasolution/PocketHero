@@ -117,7 +117,7 @@ Status pendaftaran PSE Komdigi: <strong>belum terdaftar</strong>. Aplikasi ini b
 <p>Data yang dikirim bergantung pada fitur yang Anda pakai:</p>
 <table>
 <tr><th>Fitur</th><th>Yang dikirim ke Google</th></tr>
-<tr><td>Chat</td><td>Pesan yang Anda ketik, dan, sesuai permintaan model saat menjawab pertanyaan Anda, daftar dompet, transaksi, anggaran, target, utang/piutang, dan kepemilikan saham Anda beserta seluruh catatan teks bebas di dalamnya</td></tr>
+<tr><td>Chat</td><td>Pesan yang Anda ketik, dan, sesuai permintaan model saat menjawab pertanyaan Anda, daftar dompet, transaksi, anggaran, target, utang/piutang, dan kepemilikan saham Anda. Pengiriman ini dibatasi: bila model tidak menyebut rentang tanggal, hanya transaksi 90 hari terakhir yang disertakan; catatan bebas pada transaksi serta nama pihak dan alasan pada utang/piutang tidak disertakan kecuali pertanyaan Anda memang membutuhkannya; utang yang sudah lunas tidak disertakan kecuali diminta</td></tr>
 <tr><td>Lampiran foto di Chat</td><td>Seluruh isi foto yang Anda lampirkan, dikirim utuh tanpa dipotong</td></tr>
 <tr><td>Pindai Transaksi</td><td>Seluruh isi foto struk, bukti pembayaran, atau bukti transaksi saham yang Anda pindai</td></tr>
 <tr><td>Impor Cerdas</td><td>Seluruh isi berkas yang Anda pilih, misalnya rekening koran, termasuk data pihak lawan transaksi yang tercantum di dalamnya</td></tr>
@@ -319,7 +319,7 @@ Komdigi PSE registration status: <strong>not registered</strong>. This app runs 
 <p><strong>These features are off by default.</strong> The first time you open an AI feature the app shows a consent dialog. Until you agree, no path in the app can transmit your data: the consent check happens at the network layer, not merely in the interface.</p>
 <table>
 <tr><th>Feature</th><th>What is sent to Google</th></tr>
-<tr><td>Chat</td><td>The messages you type, and, as the model requests while answering you, your wallets, transactions, budgets, goals, debts, and stock holdings including all free-text notes in them</td></tr>
+<tr><td>Chat</td><td>The messages you type, and, as the model requests while answering you, your wallets, transactions, budgets, goals, debts, and stock holdings. What is sent is bounded: with no date range named by the model, only the last 90 days of transactions are included; transaction notes, and counterparty names and reasons on debts, are left out unless your question calls for them; settled debts are left out unless asked for</td></tr>
 <tr><td>Photo attachment in Chat</td><td>The entire photo you attach, sent whole and uncropped</td></tr>
 <tr><td>Scan Transaction</td><td>The entire photo of the receipt, payment confirmation, or stock trade proof you scan</td></tr>
 <tr><td>Smart Import</td><td>The entire contents of the file you select, such as a bank statement, including counterparty data it contains</td></tr>
