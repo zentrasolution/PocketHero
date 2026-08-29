@@ -32,7 +32,7 @@ ul{padding-left:22px}
 
 <h1>Kebijakan Privasi</h1>
 <p class="meta">Aplikasi <strong>PocketHero</strong> (Android &amp; iOS)<br>
-Versi dokumen 1.0 · Berlaku sejak <strong>26 Agustus 2026</strong> · Terakhir diperbarui <strong>28 Agustus 2026</strong></p>
+Versi dokumen 1.0 · Berlaku sejak <strong>26 Agustus 2026</strong> · Terakhir diperbarui <strong>29 Agustus 2026</strong></p>
 
 <h2>1. Ringkasan</h2>
 <p>PocketHero adalah aplikasi pencatat keuangan pribadi yang berjalan sepenuhnya di perangkat Anda.</p>
@@ -141,7 +141,7 @@ Jika Anda tidak ingin data keuangan Anda dipakai untuk pelatihan atau berpotensi
 <h3>6.3 Pencadangan dan ekspor yang Anda lakukan sendiri</h3>
 <p>Fitur Cadangkan dan Pulihkan memungkinkan Anda menyimpan salinan data ke lokasi yang <strong>Anda pilih sendiri</strong>, serta mengekspor ke CSV atau JSON.</p>
 <div class="box">
-<strong>Di Android, berkas cadangan dienkripsi dengan kata sandi yang Anda tentukan sendiri</strong> saat membuatnya, dan kata sandi itu satu-satunya cara membukanya kembali. Kami tidak dapat memulihkannya: jika Anda lupa, berkas tersebut tidak akan pernah bisa dibaca lagi. Di iOS, berkas cadangan <strong>belum</strong> dienkripsi &mdash; berkas tersebut adalah salinan utuh basis data Anda dalam bentuk terbaca.<br><br>
+<strong>Berkas cadangan dienkripsi dengan kata sandi yang Anda tentukan sendiri</strong> saat membuatnya, di Android maupun di iOS, dan kata sandi itu satu-satunya cara membukanya kembali. Kami tidak dapat memulihkannya: jika Anda lupa, berkas tersebut tidak akan pernah bisa dibaca lagi. Ekspor CSV dan JSON tetap tidak dienkripsi di kedua platform.<br><br>
 <strong>Ekspor CSV dan JSON tidak pernah dienkripsi</strong>, di kedua platform. Begitu Anda menyimpan salah satu berkas ini ke Google Drive, iCloud Drive, kartu SD, folder unduhan, atau mengirimkannya lewat aplikasi pesan, berkas itu keluar dari seluruh perlindungan aplikasi ini dan tunduk pada kebijakan privasi layanan tujuan tersebut. Simpanlah hanya di tempat yang Anda percayai.
 </div>
 
@@ -199,14 +199,14 @@ Jika Anda tidak ingin data keuangan Anda dipakai untuk pelatihan atau berpotensi
 <li>Data disimpan di penyimpanan privat aplikasi, tidak dapat diakses aplikasi lain pada perangkat yang tidak dibobol (non-root atau non-jailbreak)</li>
 <li>Pencadangan otomatis Android dimatikan (<code>allowBackup="false"</code>), sehingga basis data tidak ikut tersalin ke cloud Google</li>
 <li>Di iOS, berkas basis data dikecualikan dari cadangan iCloud/iTunes dan diberi kelas perlindungan <code>NSFileProtectionCompleteUntilFirstUserAuthentication</code></li>
-<li><strong>Di Android, seluruh basis data dienkripsi di penyimpanan (SQLCipher, AES-256)</strong>. Kuncinya dibuat acak di perangkat Anda dan dilindungi Android Keystore; kunci itu tidak pernah meninggalkan perangkat dan tidak pernah kami ketahui. Di iOS, enkripsi basis data <strong>belum</strong> tersedia</li>
+<li><strong>Seluruh basis data dienkripsi di penyimpanan (SQLCipher, AES-256), di Android maupun di iOS</strong>. Kuncinya dibuat acak di perangkat Anda dan dilindungi Android Keystore di Android atau iOS Keychain di iOS; kunci itu tidak pernah meninggalkan perangkat dan tidak pernah kami ketahui</li>
 <li>Kunci API Gemini dienkripsi dengan Android Keystore (AES-GCM) atau iOS Keychain</li>
 <li>Seluruh komunikasi jaringan menggunakan HTTPS</li>
 <li>Kunci aplikasi dengan biometrik tersedia dan dapat Anda aktifkan</li>
 <li>Saat kunci biometrik aktif, Android menonaktifkan tangkapan layar dan menyembunyikan pratinjau aplikasi di daftar aplikasi terbaru, sehingga isi layar tidak terbaca dari sana tanpa membuka kunci</li>
 </ul>
 <div class="box">
-<strong>Keterbatasan yang kami sampaikan secara terbuka.</strong> Enkripsi basis data saat ini baru berlaku di Android; di iOS basis data masih tersimpan tanpa enkripsi. Perlindungan di atas efektif terhadap kebocoran lewat cadangan cloud, terhadap perangkat yang hilang dalam keadaan terkunci, dan terhadap pembacaan berkas basis data secara langsung. Perlindungan tersebut <strong>tidak</strong> melindungi dari perangkat yang di-root atau di-jailbreak, maupun dari ekstraksi forensik saat perangkat dalam keadaan terbuka dan aplikasi sedang berjalan &mdash; pada kondisi itu aplikasi memang harus dapat membuka kuncinya sendiri. Kami menyarankan Anda mengaktifkan kunci layar perangkat dan kunci biometrik aplikasi.
+<strong>Keterbatasan yang kami sampaikan secara terbuka.</strong> Enkripsi basis data kini berlaku di Android dan iOS. Ekspor CSV dan JSON tetap berupa berkas biasa tanpa enkripsi di kedua platform, karena memang dimaksudkan untuk dibuka di aplikasi lain. Perlindungan di atas efektif terhadap kebocoran lewat cadangan cloud, terhadap perangkat yang hilang dalam keadaan terkunci, dan terhadap pembacaan berkas basis data secara langsung. Perlindungan tersebut <strong>tidak</strong> melindungi dari perangkat yang di-root atau di-jailbreak, maupun dari ekstraksi forensik saat perangkat dalam keadaan terbuka dan aplikasi sedang berjalan &mdash; pada kondisi itu aplikasi memang harus dapat membuka kuncinya sendiri. Kami menyarankan Anda mengaktifkan kunci layar perangkat dan kunci biometrik aplikasi.
 </div>
 <p>Karena tidak ada server dan tidak ada data pengguna di sisi pengembang, tidak ada skenario kebocoran terpusat yang memicu kewajiban pemberitahuan 3x24 jam pada Pasal 46 UU PDP. Jika di kemudian hari ditemukan celah keamanan pada aplikasi yang berpotensi mengungkap data di perangkat, kami akan mengumumkannya melalui pembaruan halaman ini dan catatan rilis aplikasi.</p>
 
@@ -237,7 +237,7 @@ Jika Anda tidak ingin data keuangan Anda dipakai untuk pelatihan atau berpotensi
 
 <h1 id="english">Privacy Policy</h1>
 <p class="meta"><strong>PocketHero</strong> app (Android &amp; iOS)<br>
-Document version 1.0 · Effective <strong>26 August 2026</strong> · Last updated <strong>28 August 2026</strong><br>
+Document version 1.0 · Effective <strong>26 August 2026</strong> · Last updated <strong>29 August 2026</strong><br>
 This English text is a translation. In case of any conflict, <strong>the Indonesian text above prevails</strong>.</p>
 
 <h2>1. Summary</h2>
@@ -346,7 +346,7 @@ If you do not want your financial data used for training or potentially read by 
 <h3>6.3 Backups and exports you make yourself</h3>
 <p>Backup &amp; Restore lets you save a copy of your data to a location <strong>you choose</strong>, and export to CSV or JSON.</p>
 <div class="box">
-<strong>On Android, a backup file is encrypted with a password you choose</strong> when you create it, and that password is the only way to open it again. We cannot recover it: if you forget it, the file is permanently unreadable. On iOS, backup files are <strong>not</strong> yet encrypted &mdash; they are a complete, readable copy of your database.<br><br>
+<strong>A backup file is encrypted with a password you choose</strong> when you create it, on both Android and iOS, and that password is the only way to open it again. We cannot recover it: if you forget it, the file is permanently unreadable. CSV and JSON exports remain unencrypted on both platforms.<br><br>
 <strong>CSV and JSON exports are never encrypted</strong>, on either platform. The moment you save any of these files to Google Drive, iCloud Drive, an SD card, your downloads folder, or send one through a messaging app, it leaves every protection this app provides and becomes subject to that destination service's privacy policy. Keep them only where you trust.
 </div>
 
@@ -404,14 +404,14 @@ If you do not want your financial data used for training or potentially read by 
 <li>Data is stored in the app's private storage, inaccessible to other apps on a non-rooted, non-jailbroken device</li>
 <li>Android auto-backup is disabled (<code>allowBackup="false"</code>), so the database is not copied to Google's cloud</li>
 <li>On iOS the database files are excluded from iCloud/iTunes backup and given the <code>NSFileProtectionCompleteUntilFirstUserAuthentication</code> protection class</li>
-<li><strong>On Android, the entire database is encrypted at rest (SQLCipher, AES-256)</strong>. Its key is generated randomly on your device and protected by the Android Keystore; the key never leaves the device and is never known to us. On iOS, database encryption is <strong>not</strong> available yet</li>
+<li><strong>The entire database is encrypted at rest (SQLCipher, AES-256), on both Android and iOS</strong>. Its key is generated randomly on your device and protected by the Android Keystore on Android or the iOS Keychain on iOS; the key never leaves the device and is never known to us</li>
 <li>The Gemini API key is encrypted with Android Keystore (AES-GCM) or the iOS Keychain</li>
 <li>All network communication uses HTTPS</li>
 <li>An optional biometric app lock is available</li>
 <li>While the biometric lock is on, Android suppresses screenshots and the app's preview in the recent-apps list, so its contents cannot be read from there without unlocking</li>
 </ul>
 <div class="box">
-<strong>A limitation we state openly.</strong> Database encryption currently applies to Android only; on iOS the database is still stored unencrypted. The measures above are effective against cloud-backup leaks, against a lost device that is locked, and against reading the database file directly. They do <strong>not</strong> protect against a rooted or jailbroken device, or forensic extraction while the device is unlocked and the app is running &mdash; in that state the app must be able to unlock its own data. We recommend enabling your device screen lock and the app's biometric lock.
+<strong>A limitation we state openly.</strong> Database encryption now applies on both Android and iOS. CSV and JSON exports remain ordinary unencrypted files on both platforms, because they are meant to be opened in other apps. The measures above are effective against cloud-backup leaks, against a lost device that is locked, and against reading the database file directly. They do <strong>not</strong> protect against a rooted or jailbroken device, or forensic extraction while the device is unlocked and the app is running &mdash; in that state the app must be able to unlock its own data. We recommend enabling your device screen lock and the app's biometric lock.
 </div>
 <p>Because there is no server and no user data on the developer's side, there is no centralised breach scenario triggering the 3x24-hour notification duty in Article 46 UU PDP. If a security flaw in the app that could expose on-device data is ever found, we will disclose it through an update to this page and the app release notes.</p>
 
