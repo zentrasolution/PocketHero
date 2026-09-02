@@ -32,16 +32,16 @@ ul{padding-left:22px}
 
 <h1>Kebijakan Privasi</h1>
 <p class="meta">Aplikasi <strong>Pocket Hero</strong> (Android &amp; iOS)<br>
-Versi dokumen 1.0 · Berlaku sejak <strong>26 Agustus 2026</strong> · Terakhir diperbarui <strong>29 Agustus 2026</strong></p>
+Versi dokumen 1.0 · Berlaku sejak <strong>26 Agustus 2026</strong> · Terakhir diperbarui <strong>1 September 2026</strong></p>
 
 <h2>1. Ringkasan</h2>
 <p>Pocket Hero adalah aplikasi pencatat keuangan pribadi yang berjalan sepenuhnya di perangkat Anda.</p>
 <ul>
-<li><strong>Kami tidak memiliki server.</strong> Pengembang tidak menerima, tidak menyimpan, dan tidak dapat melihat data keuangan Anda.</li>
+<li><strong>Catatan keuangan Anda tidak pernah disimpan di server kami.</strong> Kami mengoperasikan satu server, dan perannya sempit: ia hanya meneruskan permintaan fitur AI ke Google dan menghitung berapa banyak permintaan yang dibuat tiap perangkat. Isi permintaan itu tidak disimpan di sana. Lihat Bagian 6.2.</li>
 <li><strong>Tidak ada analitik, pelacak, iklan, atau pelaporan kerusakan (crash reporting) apa pun</strong> di dalam aplikasi ini.</li>
 <li>Seluruh catatan keuangan Anda disimpan di basis data lokal pada perangkat Anda sendiri.</li>
-<li><strong>Fitur AI bersifat opsional dan mati secara bawaan.</strong> Fitur ini hanya aktif setelah Anda menyetujuinya secara eksplisit, dan hanya berjalan dengan kunci API Google Gemini milik Anda sendiri. Seluruh fitur lain berfungsi tanpa koneksi internet.</li>
-<li>Jika Anda menyalakan fitur AI, data keuangan yang relevan dengan pertanyaan Anda dikirim ke Google. Bacalah Bagian 6 dengan saksama sebelum menyalakannya.</li>
+<li><strong>Fitur AI bersifat opsional dan mati secara bawaan.</strong> Fitur ini hanya aktif setelah Anda menyetujuinya secara eksplisit. Seluruh fitur lain berfungsi tanpa koneksi internet.</li>
+<li>Jika Anda menyalakan fitur AI, data keuangan yang relevan dengan pertanyaan Anda dikirim ke server kami dan diteruskan ke Google. Bacalah Bagian 6 dengan saksama sebelum menyalakannya.</li>
 </ul>
 
 <h2>2. Identitas dan Kontak Pengendali Data</h2>
@@ -50,13 +50,13 @@ Versi dokumen 1.0 · Berlaku sejak <strong>26 Agustus 2026</strong> · Terakhir 
 Nama pengendali: <strong>Zentra Solution (tim pengembang perorangan, belum berbadan hukum)</strong><br>
 Alamat: <strong>Jakarta Pusat, DKI Jakarta, Indonesia</strong><br>
 Email kontak: <strong>zentrasolution.ai@gmail.com</strong><br>
-Status pendaftaran PSE Komdigi: <strong>belum terdaftar</strong>. Aplikasi ini berjalan sepenuhnya di perangkat Anda &mdash; tanpa server, tanpa akun pengguna, tanpa perdagangan barang atau jasa, dan tanpa transaksi elektronik &mdash; sehingga tidak jelas apakah ia termasuk kategori yang wajib mendaftar menurut Pasal 2 Permenkominfo 5/2020 sebagaimana diubah dengan Permenkominfo 10/2021. Status ini sedang kami tinjau dan akan diselesaikan sebelum peluncuran; halaman ini diperbarui begitu ada kepastian.
+Status pendaftaran PSE Komdigi: <strong>belum terdaftar</strong>. Seluruh catatan keuangan berada di perangkat Anda, dan server yang kami operasikan hanya meneruskan permintaan fitur AI serta menghitung pemakaiannya (Bagian 6.2) &mdash; tanpa akun yang Anda daftarkan, tanpa perdagangan barang atau jasa, dan tanpa transaksi elektronik &mdash; sehingga tidak jelas apakah ia termasuk kategori yang wajib mendaftar menurut Pasal 2 Permenkominfo 5/2020 sebagaimana diubah dengan Permenkominfo 10/2021. Status ini sedang kami tinjau dan akan diselesaikan sebelum peluncuran; halaman ini diperbarui begitu ada kepastian.
 </div>
 <p>Aplikasi ini tidak menunjuk Pejabat Pelindungan Data (DPO) karena tidak melakukan pemrosesan data pribadi dalam skala besar dan tidak melakukan pemantauan rutin dan sistematis terhadap subjek data (Pasal 53 UU PDP).</p>
 
 <h2>3. Prinsip Dasar: Data Anda Tinggal di Perangkat Anda</h2>
-<p>Aplikasi ini tidak memiliki akun pengguna, tidak memerlukan pendaftaran, dan tidak melakukan sinkronisasi ke cloud. Seluruh data yang Anda masukkan disimpan dalam basis data SQLite lokal di penyimpanan privat aplikasi pada perangkat Anda.</p>
-<p>Konsekuensinya, dua hal berlaku bersamaan: pengembang tidak pernah dapat mengakses data Anda, dan pengembang juga tidak dapat memulihkan data Anda jika perangkat Anda hilang, rusak, atau aplikasi dihapus. Tanggung jawab pencadangan sepenuhnya ada pada Anda (lihat Bagian 6.3).</p>
+<p>Aplikasi ini tidak memiliki akun pengguna yang Anda buat, tidak memerlukan pendaftaran, dan tidak melakukan sinkronisasi catatan keuangan ke cloud. Seluruh data yang Anda masukkan disimpan dalam basis data SQLite lokal di penyimpanan privat aplikasi pada perangkat Anda. Satu-satunya pengecualian, dan hanya bila Anda menyalakan fitur AI: perangkat mendaftar secara anonim ke server kami agar pemakaian AI dapat dihitung (Bagian 4.4 dan 6.2). Pendaftaran itu tidak menyalin satu pun catatan keuangan Anda ke mana pun.</p>
+<p>Konsekuensinya, dua hal berlaku bersamaan: pengembang tidak pernah dapat mengakses data Anda, dan pengembang juga tidak dapat memulihkan data Anda jika perangkat Anda hilang, rusak, atau aplikasi dihapus. Tanggung jawab pencadangan sepenuhnya ada pada Anda (lihat Bagian 6.4).</p>
 
 <h2>4. Data yang Disimpan Aplikasi di Perangkat Anda</h2>
 <p>Semua data berikut Anda masukkan sendiri. Aplikasi tidak mengambil data apa pun dari sumber lain di perangkat Anda tanpa tindakan Anda.</p>
@@ -85,8 +85,9 @@ Status pendaftaran PSE Komdigi: <strong>belum terdaftar</strong>. Aplikasi ini b
 <h3>4.3 Riwayat percakapan AI</h3>
 <p>Jika Anda memakai fitur Chat, seluruh percakapan disimpan secara lokal: teks pesan Anda, jawaban model, usulan tindakan yang belum Anda konfirmasi, dan <strong>gambar kecil (thumbnail) dari foto yang Anda lampirkan</strong>. Foto yang pernah Anda pindai tetap tersimpan di riwayat chat sampai Anda menghapusnya.</p>
 
-<h3>4.4 Kunci API Google Gemini Anda</h3>
-<p>Jika Anda mengisinya, kunci API disimpan dalam bentuk terenkripsi di perangkat: Android Keystore (AES-GCM) di Android, dan Keychain di iOS. Kunci ini tidak pernah dikirim ke mana pun kecuali ke server Google saat Anda memakai fitur AI.</p>
+<h3>4.4 Token sesi anonim untuk fitur AI</h3>
+<p>Aplikasi tidak lagi meminta kunci API Google Gemini Anda; kunci itu kini milik pengembang dan berada di server kami, tidak pernah ada di perangkat Anda.</p>
+<p>Sebagai gantinya, saat pertama kali Anda memakai fitur AI, perangkat Anda mendaftar secara <strong>anonim</strong> ke server kami dan menerima sebuah token sesi. Token itu tidak mengandung nama, email, nomor telepon, atau pengenal perangkat apa pun &mdash; ia hanya nomor acak yang membedakan satu perangkat dari perangkat lain, supaya kuota harian dapat dihitung dan layanan tidak disalahgunakan. Token disimpan terenkripsi di perangkat: Android Keystore (AES-GCM) di Android, dan Keychain di iOS. Menekan <em>Pengaturan &rarr; Hapus Semua Data Aplikasi</em> menghapus token itu, dan pemakaian AI berikutnya mendaftar sebagai identitas anonim yang baru.</p>
 
 <h3>4.5 Catatan penting tentang empat digit kartu</h3>
 <p>Tampilan kartu kredit di aplikasi menampilkan empat digit yang <strong>dibuat acak oleh aplikasi</strong> semata-mata sebagai hiasan visual. Aplikasi <strong>tidak pernah meminta, menerima, atau menyimpan nomor kartu, CVV, PIN, tanggal kedaluwarsa, kredensial perbankan, atau data pembayaran apa pun</strong>.</p>
@@ -97,7 +98,7 @@ Status pendaftaran PSE Komdigi: <strong>belum terdaftar</strong>. Aplikasi ini b
 <h2>5. Data yang TIDAK Dikumpulkan Aplikasi Ini</h2>
 <p>Untuk menghindari keraguan, aplikasi ini tidak mengumpulkan, tidak mengakses, dan tidak mengirim ke pengembang:</p>
 <ul>
-<li>Identitas Anda. Tidak ada akun, email, nomor telepon, atau tanggal lahir yang diminta</li>
+<li>Identitas Anda. Tidak ada email, nomor telepon, atau tanggal lahir yang diminta, dan tidak ada akun yang Anda buat atau masuki. Fitur AI memang mendaftarkan perangkat Anda secara anonim ke server kami (Bagian 4.4 dan 6.2), tetapi pendaftaran itu tidak meminta dan tidak menerima satu pun keterangan tentang siapa Anda</li>
 <li>Lokasi, baik presisi maupun perkiraan</li>
 <li>Daftar kontak, SMS, riwayat panggilan, kalender</li>
 <li>Daftar aplikasi terpasang</li>
@@ -112,7 +113,7 @@ Status pendaftaran PSE Komdigi: <strong>belum terdaftar</strong>. Aplikasi ini b
 <h2>6. Pihak Ketiga dan Transfer Data ke Luar Wilayah Indonesia</h2>
 
 <h3>6.1 Google Gemini API, hanya jika Anda menyalakan fitur AI</h3>
-<p>Fitur AI (Chat, Pindai Transaksi, Impor Cerdas, Analisis Investasi) mengirim data ke Google melalui <code>generativelanguage.googleapis.com</code>. Server Google berada di luar wilayah Indonesia.</p>
+<p>Fitur AI (Chat, Pindai Transaksi, Impor Cerdas, Analisis Investasi) mengirim data ke Google melalui <code>generativelanguage.googleapis.com</code>. Server Google berada di luar wilayah Indonesia. Sejak versi ini, pengiriman itu <strong>tidak lagi langsung dari perangkat Anda</strong>: ia melewati server kami terlebih dahulu &mdash; lihat Bagian 6.2, yang merupakan bagian tak terpisahkan dari penjelasan ini.</p>
 <p><strong>Fitur ini mati secara bawaan.</strong> Saat pertama kali Anda membuka fitur AI, aplikasi menampilkan dialog persetujuan. Selama Anda belum menyetujui, tidak ada satu pun jalur di dalam aplikasi yang dapat mengirim data Anda: pemeriksaan persetujuan dilakukan pada lapisan jaringan, bukan sekadar pada tampilan.</p>
 <p>Data yang dikirim bergantung pada fitur yang Anda pakai:</p>
 <table>
@@ -124,28 +125,44 @@ Status pendaftaran PSE Komdigi: <strong>belum terdaftar</strong>. Aplikasi ini b
 <tr><td>Analisis Investasi</td><td>Daftar dompet dan kepemilikan saham Anda</td></tr>
 </table>
 <p><strong>Dasar hukum transfer ke luar wilayah Indonesia.</strong> Pengiriman ini adalah transfer Data Pribadi ke luar wilayah hukum Republik Indonesia sebagaimana diatur <strong>Pasal 56 UU PDP</strong>. Kami tidak mendasarkannya pada penilaian tingkat pelindungan negara tujuan (Pasal 56 ayat (2)), tidak pula pada perjanjian pelindungan yang mengikat antara kami dan Google (Pasal 56 ayat (3)) &mdash; kami memang tidak memiliki perjanjian semacam itu. Dasar yang kami pakai adalah <strong>persetujuan Anda yang sah, eksplisit, dan spesifik menurut Pasal 56 ayat (4) UU PDP</strong>. Karena itulah fitur AI mati secara bawaan, persetujuan diminta terpisah sebelum pengiriman pertama, dan dapat Anda cabut kapan saja.</p>
-<p><strong>Kunci API adalah milik Anda.</strong> Anda mendaftar sendiri di Google AI Studio, kunci disimpan di perangkat Anda, dan syarat layanan Google atas kunci itu berlaku langsung antara Anda dan Google. Pengembang tidak menyediakan kunci apa pun, tidak menagih biaya apa pun atasnya, dan tidak memiliki akses ke lalu lintas tersebut. Namun kami sampaikan terus terang: aplikasi inilah yang menyusun permintaan dan menentukan data apa yang disertakan di dalamnya. Kepemilikan kunci di tangan Anda <em>tidak</em> menghapus kedudukan kami sebagai pengendali data atas rancangan pengiriman itu, dan kami tidak memakainya untuk melepaskan tanggung jawab tersebut.</p>
-<p><strong>Kedudukan Google.</strong> Google bukan prosesor data pribadi yang bekerja atas perintah kami: Google memproses data yang dikirim melalui kunci Anda berdasarkan syarat layanannya sendiri, untuk tujuannya sendiri (termasuk pelatihan model pada tingkat gratis), dan kami tidak dapat memerintahkannya. Karena itu Google berkedudukan sebagai pengendali data yang berdiri sendiri, bukan prosesor kami, sehingga tidak ada perjanjian pengendali&ndash;prosesor sebagaimana dimaksud Pasal 51 UU PDP di antara kami. Konsekuensinya bagi Anda: hak-hak Anda atas data yang telanjur terkirim dijalankan langsung terhadap Google, sebagaimana disebut pada Bagian 9.</p>
+<p><strong>Kunci API sekarang milik pengembang, dan itu memperbesar tanggung jawab kami.</strong> Sebelumnya Anda mendaftar sendiri di Google AI Studio dan lalu lintas AI berjalan di luar jangkauan kami. Sekarang permintaan itu melewati server kami memakai kunci kami, sehingga secara teknis kami <em>dapat</em> melihat isinya saat sedang lewat. Kami memilih untuk tidak menyimpannya (Bagian 6.2), tetapi kami tidak menyembunyikan bahwa kemampuannya kini ada. Aplikasi inilah yang menyusun permintaan dan menentukan data apa yang disertakan, dan kami tetap berkedudukan sebagai pengendali data atas seluruh rancangan pengiriman itu.</p>
+<p><strong>Kedudukan Google.</strong> Google bukan prosesor data pribadi yang bekerja atas perintah kami: Google memproses data yang kami teruskan berdasarkan syarat layanannya sendiri, untuk tujuannya sendiri (termasuk pelatihan model pada tingkat gratis), dan kami tidak dapat memerintahkannya. Karena itu Google berkedudukan sebagai pengendali data yang berdiri sendiri, bukan prosesor kami, sehingga tidak ada perjanjian pengendali&ndash;prosesor sebagaimana dimaksud Pasal 51 UU PDP di antara kami. Konsekuensinya bagi Anda: hak-hak Anda atas data yang telanjur terkirim dijalankan langsung terhadap Google, sebagaimana disebut pada Bagian 9.</p>
 <div class="box">
 <strong>Perbedaan tingkat layanan Gemini yang wajib Anda pahami.</strong><br>
 Pada tingkat <strong>gratis</strong>, Google menyatakan menggunakan konten yang dikirimkan untuk melatih dan meningkatkan produknya, dan peninjau manusia dapat membaca masukan serta keluaran API. Pada tingkat <strong>berbayar</strong>, Google menyatakan tidak menggunakan konten Anda untuk melatih model.<br><br>
-Jika Anda tidak ingin data keuangan Anda dipakai untuk pelatihan atau berpotensi dibaca manusia, gunakan kunci API berbayar, atau jangan nyalakan fitur AI sama sekali. Ketentuan Google dapat berubah sewaktu-waktu; rujukan yang berlaku adalah
+Karena kunci yang dipakai sekarang milik pengembang, tingkat layanan itu <strong>kami</strong> yang menentukan, bukan Anda &mdash; dan Anda tidak punya cara memverifikasinya sendiri. Maka anggaplah pelatihan model dan peninjauan oleh manusia sebagai kemungkinan yang nyata, dan jangan nyalakan fitur AI jika Anda tidak bersedia menanggungnya. Ketentuan Google dapat berubah sewaktu-waktu; rujukan yang berlaku adalah
 <a href="https://ai.google.dev/gemini-api/terms" rel="noopener">ai.google.dev/gemini-api/terms</a> dan
 <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a>.
 </div>
 <p>Anda dapat mencabut persetujuan kapan saja melalui <em>Pengaturan → Berbagi Data AI</em>. Pencabutan berlaku seketika untuk seluruh permintaan berikutnya. Pencabutan tidak menarik kembali data yang telanjur dikirim ke Google sebelumnya; untuk itu Anda perlu menghubungi Google secara langsung.</p>
 
-<h3>6.2 CDN kurs mata uang</h3>
-<p>Untuk memperbarui kurs, aplikasi mengambil berkas kurs publik dari <code>cdn.jsdelivr.net</code>. Permintaan ini <strong>tidak memuat data keuangan Anda</strong>, hanya kode mata uang dasar yang Anda pilih. Seperti setiap permintaan HTTP, penyedia CDN dapat melihat alamat IP dan waktu permintaan Anda.</p>
+<h3>6.2 Server PocketHero sendiri (Supabase), hanya jika Anda menyalakan fitur AI</h3>
+<p>Sejak versi ini, permintaan fitur AI tidak lagi berjalan langsung dari perangkat Anda ke Google. Permintaan itu dikirim lebih dulu ke satu fungsi milik kami yang berjalan di <strong>Supabase</strong> (Supabase, Inc.), dan fungsi itulah yang meneruskannya ke Google memakai kunci API milik pengembang. Server Supabase yang kami pakai berada <strong>di luar wilayah Indonesia</strong>, sehingga dasar hukum transfer pada Bagian 6.1 berlaku sama untuk pengiriman ini.</p>
+<p><strong>Mengapa harus lewat server?</strong> Karena kunci API sekarang milik pengembang dan kamilah yang menanggung biayanya. Tanpa satu titik yang dapat menghitung dan menolak, siapa pun yang membongkar aplikasi dapat memakai kunci itu sebagai layanan AI gratis atas tagihan kami.</p>
+<p><strong>Apa yang disimpan di server itu:</strong></p>
+<ul>
+<li>Sebuah pengenal pengguna anonim (UUID acak) yang dibuat saat perangkat Anda mendaftar. Pengenal ini tidak terhubung ke nama, email, nomor telepon, akun toko aplikasi, maupun pengenal perangkat mana pun.</li>
+<li>Untuk pengenal itu, per hari: jumlah permintaan AI, serta jumlah token masukan dan keluaran &mdash; angka pemakaian, bukan isinya.</li>
+<li><strong>Catatan persetujuan AI.</strong> Untuk pengenal itu: nomor versi teks persetujuan yang Anda setujui, waktu Anda menekan Setuju menurut perangkat Anda, dan waktu server kami pertama kali melihat persetujuan itu. Ini bukan untuk mengenali Anda, melainkan bukti bahwa fitur AI tidak pernah dinyalakan tanpa persetujuan &mdash; kewajiban kami sebagai pengendali data menurut Pasal 20 UU PDP. Tidak ada isi permintaan Anda yang ikut tercatat.</li>
+<li><strong>Alamat IP, sementara.</strong> Supabase mencatat alamat IP perangkat Anda saat mendaftar, sebagaimana lazimnya layanan autentikasi. Kami tidak memakainya untuk apa pun, jadi kami menghapusnya otomatis <strong>setiap jam</strong>. Artinya IP Anda paling lama tersimpan satu jam, lalu hilang permanen dan tidak lagi dapat dihubungkan dengan angka pemakaian di atas.</li>
+</ul>
+<p><strong>Apa yang TIDAK disimpan di server itu:</strong> isi pesan chat Anda, foto, berkas yang Anda impor, dompet, transaksi, anggaran, target, utang/piutang, kepemilikan saham, maupun jawaban model. Data itu melewati server sebagai lalu lintas dan diteruskan; ia tidak dituliskan ke basis data mana pun milik kami, dan <strong>tidak ikut tercatat di log server</strong> &mdash; log kami hanya berisi waktu, alamat endpoint, dan kode status, tanpa isi permintaan. Kami tidak dapat membaca kembali percakapan Anda kemarin, karena tidak ada salinannya pada kami. Yang kami minta Anda pahami dengan jujur: selama data itu <em>sedang</em> lewat, secara teknis ia berada di infrastruktur kami &mdash; jaminan di sini adalah janji dan rancangan, bukan ketidakmampuan teknis.</p>
+<p><strong>Kedudukan Supabase.</strong> Supabase, Inc. menjalankan infrastruktur atas instruksi kami dan tidak memakai data itu untuk tujuannya sendiri; dalam kerangka UU PDP, Supabase adalah <strong>prosesor</strong>, sedangkan pengendalinya tetap kami. Kebijakan privasinya: <a href="https://supabase.com/privacy" rel="noopener">supabase.com/privacy</a>.</p>
+<p><strong>Penghapusan.</strong> Menghapus aplikasi tidak menghapus baris hitungan itu dari server kami, karena kami tidak punya cara mengetahui perangkat mana yang dicopot. Anda dapat meminta penghapusannya lewat alamat kontak pada Bagian 2; karena hanya berisi pengenal acak, angka, dan catatan persetujuan, penghapusannya tidak menghilangkan apa pun yang dapat Anda lihat di aplikasi. Perlu Anda ketahui: menghapus catatan persetujuan juga menghapus bukti bahwa Anda pernah menyetujuinya, jadi kami mencatat permintaan penghapusan itu sendiri sebagai gantinya.</p>
 
-<h3>6.3 Pencadangan dan ekspor yang Anda lakukan sendiri</h3>
+<h3>6.3 Kurs mata uang</h3>
+<p>Untuk mengonversi saldo antar mata uang, aplikasi mengambil tabel kurs dari <strong>server PocketHero sendiri</strong> (Supabase). Sebelumnya berkas itu diambil langsung dari CDN pihak ketiga <code>cdn.jsdelivr.net</code>; sejak 2 September 2026 tidak lagi, sehingga tidak ada pihak ketiga yang terlibat dalam pembaruan kurs.</p>
+<p>Permintaan ini <strong>kosong</strong>: ia tidak memuat data keuangan Anda, tidak memuat mata uang yang Anda pilih, dan tidak memuat pengenal apa pun &mdash; aplikasi hanya meminta seluruh tabel kurs dan melakukan perhitungannya sendiri di perangkat Anda. Berbeda dengan Bagian 6.1 dan 6.2, permintaan ini tidak memerlukan persetujuan fitur AI dan tidak disertai sesi masuk apa pun. Seperti setiap permintaan HTTP, server kami menerima alamat IP dan waktu permintaan; keduanya tidak kami simpan ke basis data mana pun (lihat Bagian 6.2 mengenai isi log kami).</p>
+<p>Kurs itu sendiri sama untuk semua pengguna dan tidak terkait dengan siapa pun. Aplikasi menyimpannya di perangkat Anda dan hanya memperbaruinya bila salinan itu sudah lebih tua dari 24 jam.</p>
+
+<h3>6.4 Pencadangan dan ekspor yang Anda lakukan sendiri</h3>
 <p>Fitur Cadangkan dan Pulihkan memungkinkan Anda menyimpan salinan data ke lokasi yang <strong>Anda pilih sendiri</strong>, serta mengekspor ke CSV atau JSON.</p>
 <div class="box">
 <strong>Berkas cadangan dienkripsi dengan kata sandi yang Anda tentukan sendiri</strong> saat membuatnya, di Android maupun di iOS, dan kata sandi itu satu-satunya cara membukanya kembali. Kami tidak dapat memulihkannya: jika Anda lupa, berkas tersebut tidak akan pernah bisa dibaca lagi. Ekspor CSV dan JSON tetap tidak dienkripsi di kedua platform.<br><br>
 <strong>Ekspor CSV dan JSON tidak pernah dienkripsi</strong>, di kedua platform. Begitu Anda menyimpan salah satu berkas ini ke Google Drive, iCloud Drive, kartu SD, folder unduhan, atau mengirimkannya lewat aplikasi pesan, berkas itu keluar dari seluruh perlindungan aplikasi ini dan tunduk pada kebijakan privasi layanan tujuan tersebut. Simpanlah hanya di tempat yang Anda percayai.
 </div>
 
-<h3>6.4 Layanan sistem operasi</h3>
+<h3>6.5 Layanan sistem operasi</h3>
 <ul>
 <li><strong>Kamera dan galeri foto</strong> dibuka hanya ketika Anda menekan tombol pindai atau lampirkan. Aplikasi hanya menerima foto yang Anda pilih.</li>
 <li><strong>Biometrik</strong> (sidik jari atau Face ID) diproses seluruhnya oleh sistem operasi. Aplikasi tidak pernah melihat data biometrik Anda.</li>
@@ -153,14 +170,15 @@ Jika Anda tidak ingin data keuangan Anda dipakai untuk pelatihan atau berpotensi
 </ul>
 
 
-<h3>6.5 Pemeriksaan versi minimum</h3>
+<h3>6.6 Pemeriksaan versi minimum</h3>
 <p>Saat dibuka, aplikasi mengambil sebuah berkas kecil dari <code>zentrasolution.github.io</code> (GitHub Pages) yang hanya berisi nomor versi minimum yang masih kami dukung. Permintaan ini <strong>tidak memuat data apa pun tentang Anda</strong> &mdash; tidak ada data keuangan, tidak ada pengenal perangkat, dan tidak ada nomor pemasangan. Aplikasi hanya membaca angka tersebut lalu membandingkannya dengan versi yang terpasang di perangkat Anda. Seperti setiap permintaan HTTP, GitHub sebagai penyedia hosting dapat melihat alamat IP dan waktu permintaan Anda. Berkas legal yang Anda buka dari Pengaturan dilayani dari alamat yang sama.</p>
 <h2>7. Dasar Hukum dan Tujuan Pemrosesan</h2>
 <table>
 <tr><th>Aktivitas</th><th>Tujuan</th><th>Dasar hukum (UU PDP Pasal 20)</th></tr>
 <tr><td>Menyimpan catatan keuangan di perangkat</td><td>Menjalankan fungsi utama aplikasi yang Anda pasang</td><td>Pemenuhan perjanjian dengan subjek data, Pasal 20 ayat (2) huruf b</td></tr>
 <tr><td>Menyimpan preferensi dan profil</td><td>Menyesuaikan tampilan sesuai pilihan Anda</td><td>Pemenuhan perjanjian, Pasal 20 ayat (2) huruf b</td></tr>
-<tr><td>Mengirim data ke Google Gemini</td><td>Menjalankan fitur AI yang Anda minta</td><td><strong>Persetujuan yang sah, eksplisit, dan spesifik</strong>, Pasal 20 ayat (2) huruf a jo. Pasal 22</td></tr>
+<tr><td>Menghitung pemakaian AI per pengenal anonim di server kami</td><td>Membatasi penyalahgunaan dan menanggung biaya layanan AI yang kami bayar</td><td><strong>Kepentingan yang sah</strong>, Pasal 20 ayat (2) huruf f</td></tr>
+<tr><td>Mengirim data ke server kami lalu ke Google Gemini</td><td>Menjalankan fitur AI yang Anda minta</td><td><strong>Persetujuan yang sah, eksplisit, dan spesifik</strong>, Pasal 20 ayat (2) huruf a jo. Pasal 22</td></tr>
 <tr><td>Mengambil kurs mata uang</td><td>Konversi antar mata uang</td><td>Pemenuhan perjanjian, Pasal 20 ayat (2) huruf b</td></tr>
 <tr><td>Pengingat jatuh tempo kartu kredit</td><td>Fitur yang Anda aktifkan sendiri</td><td>Persetujuan, Pasal 20 ayat (2) huruf a</td></tr>
 </table>
@@ -171,7 +189,7 @@ Jika Anda tidak ingin data keuangan Anda dipakai untuk pelatihan atau berpotensi
 <table>
 <tr><th>Cara</th><th>Yang terhapus</th></tr>
 <tr><td>Menghapus satu catatan di dalam aplikasi</td><td>Catatan tersebut, seketika dan permanen</td></tr>
-<tr><td><em>Pengaturan → Hapus Semua Data Aplikasi</em></td><td>Seluruh data keuangan, seluruh riwayat chat beserta foto di dalamnya, kunci API Gemini yang tersimpan, serta nama tampilan dan foto profil maupun foto latar yang Anda pilih. Dompet dan kategori bawaan dibuat ulang agar aplikasi tetap dapat digunakan.</td></tr>
+<tr><td><em>Pengaturan → Hapus Semua Data Aplikasi</em></td><td>Seluruh data keuangan, seluruh riwayat chat beserta foto di dalamnya, token sesi AI yang tersimpan, serta nama tampilan dan foto profil maupun foto latar yang Anda pilih. Dompet dan kategori bawaan dibuat ulang agar aplikasi tetap dapat digunakan.</td></tr>
 <tr><td>Menghapus (uninstall) aplikasi</td><td>Seluruh basis data dan preferensi lokal</td></tr>
 </table>
 <p><strong>Satu pengecualian yang disengaja:</strong> Hapus Semua Data Aplikasi tidak mematikan persetujuan AI Anda. Menghapus data bukanlah menarik persetujuan, dan mematikannya secara diam-diam akan membuat Anda dihadang dialog persetujuan yang tidak Anda minta pada penggunaan berikutnya. Untuk menarik persetujuan, gunakan sakelar <em>Berbagi Data AI</em> di Pengaturan.</p>
@@ -200,7 +218,7 @@ Jika Anda tidak ingin data keuangan Anda dipakai untuk pelatihan atau berpotensi
 <li>Pencadangan otomatis Android dimatikan (<code>allowBackup="false"</code>), sehingga basis data tidak ikut tersalin ke cloud Google</li>
 <li>Di iOS, berkas basis data dikecualikan dari cadangan iCloud/iTunes dan diberi kelas perlindungan <code>NSFileProtectionCompleteUntilFirstUserAuthentication</code></li>
 <li><strong>Seluruh basis data dienkripsi di penyimpanan (SQLCipher, AES-256), di Android maupun di iOS</strong>. Kuncinya dibuat acak di perangkat Anda dan dilindungi Android Keystore di Android atau iOS Keychain di iOS; kunci itu tidak pernah meninggalkan perangkat dan tidak pernah kami ketahui</li>
-<li>Kunci API Gemini dienkripsi dengan Android Keystore (AES-GCM) atau iOS Keychain</li>
+<li>Token sesi AI dienkripsi dengan Android Keystore (AES-GCM) atau iOS Keychain</li>
 <li>Seluruh komunikasi jaringan menggunakan HTTPS</li>
 <li>Kunci aplikasi dengan biometrik tersedia dan dapat Anda aktifkan</li>
 <li>Saat kunci biometrik aktif, Android menonaktifkan tangkapan layar dan menyembunyikan pratinjau aplikasi di daftar aplikasi terbaru, sehingga isi layar tidak terbaca dari sana tanpa membuka kunci</li>
@@ -208,7 +226,7 @@ Jika Anda tidak ingin data keuangan Anda dipakai untuk pelatihan atau berpotensi
 <div class="box">
 <strong>Keterbatasan yang kami sampaikan secara terbuka.</strong> Enkripsi basis data kini berlaku di Android dan iOS. Ekspor CSV dan JSON tetap berupa berkas biasa tanpa enkripsi di kedua platform, karena memang dimaksudkan untuk dibuka di aplikasi lain. Perlindungan di atas efektif terhadap kebocoran lewat cadangan cloud, terhadap perangkat yang hilang dalam keadaan terkunci, dan terhadap pembacaan berkas basis data secara langsung. Perlindungan tersebut <strong>tidak</strong> melindungi dari perangkat yang di-root atau di-jailbreak, maupun dari ekstraksi forensik saat perangkat dalam keadaan terbuka dan aplikasi sedang berjalan &mdash; pada kondisi itu aplikasi memang harus dapat membuka kuncinya sendiri. Kami menyarankan Anda mengaktifkan kunci layar perangkat dan kunci biometrik aplikasi.
 </div>
-<p>Karena tidak ada server dan tidak ada data pengguna di sisi pengembang, tidak ada skenario kebocoran terpusat yang memicu kewajiban pemberitahuan 3x24 jam pada Pasal 46 UU PDP. Jika di kemudian hari ditemukan celah keamanan pada aplikasi yang berpotensi mengungkap data di perangkat, kami akan mengumumkannya melalui pembaruan halaman ini dan catatan rilis aplikasi.</p>
+<p>Server kami tidak menyimpan satu pun catatan keuangan &mdash; yang ada di sana hanya pengenal anonim dan angka pemakaian (Bagian 6.2) &mdash; sehingga kebocoran pada server itu tidak mengungkap data keuangan siapa pun. Meski begitu, kami tidak lagi menyatakan bahwa skenario kebocoran terpusat mustahil: bila terjadi kegagalan pelindungan data pribadi pada server itu, kami akan memberitahukannya sesuai kewajiban 3 x 24 jam pada Pasal 46 UU PDP. Hal yang sama berlaku bila ditemukan celah keamanan pada aplikasi yang berpotensi mengungkap data di perangkat: kami mengumumkannya melalui pembaruan halaman ini dan catatan rilis aplikasi.</p>
 
 <h2>11. Batas Usia</h2>
 <p>Aplikasi ini ditujukan untuk pengguna berusia <strong>18 tahun ke atas</strong> dan tidak dirancang untuk anak. Kami tidak dengan sengaja mengumpulkan data anak. Sesuai Pasal 25 dan Pasal 26 UU PDP, pemrosesan data anak memerlukan persetujuan orang tua atau wali. Jika Anda berusia di bawah 18 tahun, jangan gunakan fitur AI tanpa persetujuan orang tua atau wali Anda.</p>
@@ -237,17 +255,17 @@ Jika Anda tidak ingin data keuangan Anda dipakai untuk pelatihan atau berpotensi
 
 <h1 id="english">Privacy Policy</h1>
 <p class="meta"><strong>Pocket Hero</strong> app (Android &amp; iOS)<br>
-Document version 1.0 · Effective <strong>26 August 2026</strong> · Last updated <strong>29 August 2026</strong><br>
+Document version 1.0 · Effective <strong>26 August 2026</strong> · Last updated <strong>1 September 2026</strong><br>
 This English text is a translation. In case of any conflict, <strong>the Indonesian text above prevails</strong>.</p>
 
 <h2>1. Summary</h2>
 <p>Pocket Hero is a personal finance app that runs entirely on your device.</p>
 <ul>
-<li><strong>We operate no server.</strong> The developer does not receive, store, or have any way to see your financial data.</li>
+<li><strong>Your financial records are never stored on our server.</strong> We do operate one server, and its role is narrow: it forwards AI requests to Google and counts how many requests each device makes. The contents of those requests are not stored there. See Section 6.2.</li>
 <li><strong>There is no analytics, tracking, advertising, or crash reporting</strong> of any kind in this app.</li>
 <li>All of your financial records are stored in a local database on your own device.</li>
-<li><strong>The AI features are optional and off by default.</strong> They turn on only after you explicitly agree, and they run on your own Google Gemini API key. Every other feature works with no internet connection at all.</li>
-<li>If you turn the AI features on, financial data relevant to your question is sent to Google. Read Section 6 carefully before enabling them.</li>
+<li><strong>The AI features are optional and off by default.</strong> They turn on only after you explicitly agree. Every other feature works with no internet connection at all.</li>
+<li>If you turn the AI features on, financial data relevant to your question is sent to our server and passed on to Google. Read Section 6 carefully before enabling them.</li>
 </ul>
 
 <h2>2. Data Controller Identity and Contact</h2>
@@ -256,13 +274,13 @@ This English text is a translation. In case of any conflict, <strong>the Indones
 Controller name: <strong>Zentra Solution (an unincorporated independent developer team)</strong><br>
 Address: <strong>Jakarta Pusat, DKI Jakarta, Indonesia</strong><br>
 Contact email: <strong>zentrasolution.ai@gmail.com</strong><br>
-Komdigi PSE registration status: <strong>not registered</strong>. This app runs entirely on your device &mdash; no server, no user accounts, no trade in goods or services, and no electronic transactions &mdash; so whether it falls within the categories required to register under Article 2 of Permenkominfo 5/2020 as amended by Permenkominfo 10/2021 is not settled. We are reviewing that status and will resolve it before launch; this page will be updated once it is.
+Komdigi PSE registration status: <strong>not registered</strong>. All financial records stay on your device, and the server we do operate only forwards AI requests and counts their usage (Section 6.2) &mdash; with no account you register for, no trade in goods or services, and no electronic transactions &mdash; so whether it falls within the categories required to register under Article 2 of Permenkominfo 5/2020 as amended by Permenkominfo 10/2021 is not settled. We are reviewing that status and will resolve it before launch; this page will be updated once it is.
 </div>
 <p>No Data Protection Officer is appointed, as this app does not process personal data on a large scale and does not carry out regular and systematic monitoring of data subjects (Article 53 UU PDP).</p>
 
 <h2>3. Core Principle: Your Data Stays on Your Device</h2>
-<p>The app has no user accounts, requires no sign-up, and performs no cloud synchronisation. Everything you enter is stored in a local SQLite database in the app's private storage on your device.</p>
-<p>Two things follow from this at once: the developer can never access your data, and the developer also cannot recover your data if your device is lost or damaged or the app is uninstalled. Backups are entirely your responsibility (see Section 6.3).</p>
+<p>The app has no user account for you to create, requires no registration, and syncs no financial records to the cloud. Everything you enter is stored in a local SQLite database in the app's private storage on your device. The single exception, and only if you enable the AI features: the device registers anonymously with our server so AI usage can be counted (Sections 4.4 and 6.2). That registration copies none of your financial records anywhere.</p>
+<p>Two things follow from this at once: the developer can never access your data, and the developer also cannot recover your data if your device is lost or damaged or the app is uninstalled. Backups are entirely your responsibility (see Section 6.4).</p>
 
 <h2>4. Data the App Stores on Your Device</h2>
 <p>You enter all of the following yourself. The app does not pull data from any other source on your device without an action from you.</p>
@@ -291,8 +309,9 @@ Komdigi PSE registration status: <strong>not registered</strong>. This app runs 
 <h3>4.3 AI chat history</h3>
 <p>If you use the Chat feature, the whole conversation is stored locally: your message text, the model's replies, action proposals you have not confirmed, and <strong>thumbnails of photos you attach</strong>. Photos you have scanned remain in chat history until you clear it.</p>
 
-<h3>4.4 Your Google Gemini API key</h3>
-<p>If you enter one, it is stored encrypted on the device: Android Keystore (AES-GCM) on Android, Keychain on iOS. It is never transmitted anywhere except to Google's servers when you use an AI feature.</p>
+<h3>4.4 An anonymous session token for the AI features</h3>
+<p>The app no longer asks for your Google Gemini API key; that key is now the developer's and lives on our server, never on your device.</p>
+<p>Instead, the first time you use an AI feature your device registers <strong>anonymously</strong> with our server and receives a session token. It contains no name, email, phone number, or device identifier &mdash; it is a random number that distinguishes one device from another so that a daily quota can be counted and the service cannot be abused. It is stored encrypted on the device: Android Keystore (AES-GCM) on Android, Keychain on iOS. <em>Settings &rarr; Clear All App Data</em> deletes it, and the next AI use registers as a new anonymous identity.</p>
 
 <h3>4.5 Important note about the card's last four digits</h3>
 <p>The credit card visual in the app shows four digits that are <strong>randomly generated by the app</strong> purely as decoration. The app <strong>never asks for, receives, or stores card numbers, CVV, PIN, expiry dates, banking credentials, or any payment data</strong>.</p>
@@ -303,7 +322,7 @@ Komdigi PSE registration status: <strong>not registered</strong>. This app runs 
 <h2>5. Data This App Does NOT Collect</h2>
 <p>For the avoidance of doubt, this app does not collect, access, or send to the developer:</p>
 <ul>
-<li>Your identity. No account, email, phone number, or date of birth is requested</li>
+<li>Your identity. No email, phone number, or date of birth is requested, and there is no account for you to create or sign in to. The AI features do register your device anonymously with our server (Sections 4.4 and 6.2), but that registration neither asks for nor receives anything about who you are</li>
 <li>Location, precise or approximate</li>
 <li>Contacts, SMS, call history, calendar</li>
 <li>The list of installed apps</li>
@@ -318,7 +337,7 @@ Komdigi PSE registration status: <strong>not registered</strong>. This app runs 
 <h2>6. Third Parties and Transfers Outside Indonesia</h2>
 
 <h3>6.1 Google Gemini API, only if you enable the AI features</h3>
-<p>The AI features (Chat, Scan Transaction, Smart Import, Investment Analysis) send data to Google via <code>generativelanguage.googleapis.com</code>. Google's servers are located outside Indonesia.</p>
+<p>The AI features (Chat, Scan Transaction, Smart Import, Investment Analysis) send data to Google via <code>generativelanguage.googleapis.com</code>. Google's servers are located outside Indonesia. As of this version that transmission <strong>no longer goes from your device to Google directly</strong>: it passes through our own server first &mdash; see Section 6.2, which is part of this disclosure and not a footnote to it.</p>
 <p><strong>These features are off by default.</strong> The first time you open an AI feature the app shows a consent dialog. Until you agree, no path in the app can transmit your data: the consent check happens at the network layer, not merely in the interface.</p>
 <table>
 <tr><th>Feature</th><th>What is sent to Google</th></tr>
@@ -329,28 +348,44 @@ Komdigi PSE registration status: <strong>not registered</strong>. This app runs 
 <tr><td>Investment Analysis</td><td>Your wallets and stock holdings</td></tr>
 </table>
 <p><strong>Legal basis for the transfer out of Indonesia.</strong> This transmission is a transfer of personal data outside the jurisdiction of the Republic of Indonesia within the meaning of <strong>Article 56 UU PDP</strong>. We do not rely on an assessment of the destination country's level of protection (Art. 56(2)), nor on a binding protection agreement between us and Google (Art. 56(3)) &mdash; we hold no such agreement. The basis we rely on is <strong>your valid, explicit, and specific consent under Article 56(4) UU PDP</strong>. That is why the AI features are off by default, why consent is requested separately before the first transmission, and why you can withdraw it at any time.</p>
-<p><strong>The API key is yours.</strong> You register it yourself at Google AI Studio, it is stored on your device, and Google's terms for that key apply directly between you and Google. The developer supplies no key, charges nothing for it, and has no access to that traffic. We state plainly, however, that it is this app that builds the request and decides what data goes into it. The key being yours does <em>not</em> remove our standing as data controller for the design of that transmission, and we do not use it to disclaim that responsibility.</p>
-<p><strong>Google's role.</strong> Google is not a personal data processor acting on our instructions: it processes what your key sends under its own terms of service, for its own purposes (including model training on the free tier), and we cannot direct it. Google therefore stands as an independent data controller rather than our processor, which means there is no controller&ndash;processor agreement between us within the meaning of Article 51 UU PDP. What this means for you: your rights over data already sent are exercised directly against Google, as stated in Section 9.</p>
+<p><strong>The API key is now the developer's, and that widens our responsibility.</strong> Previously you registered your own key at Google AI Studio and the AI traffic was beyond our reach. Those requests now pass through our server on our key, which means we technically <em>can</em> see their contents in transit. We choose not to store them (Section 6.2), but we will not pretend the capability is absent. It is this app that builds the request and decides what data goes into it, and we remain the data controller for that whole design.</p>
+<p><strong>Google's role.</strong> Google is not a personal data processor acting on our instructions: it processes what we forward under its own terms of service, for its own purposes (including model training on the free tier), and we cannot direct it. Google therefore stands as an independent data controller rather than our processor, which means there is no controller&ndash;processor agreement between us within the meaning of Article 51 UU PDP. What this means for you: your rights over data already sent are exercised directly against Google, as stated in Section 9.</p>
 <div class="box">
 <strong>The Gemini tier difference you must understand.</strong><br>
 On the <strong>free</strong> tier, Google states that it uses submitted content to train and improve its products, and that human reviewers may read API input and output. On the <strong>paid</strong> tier, Google states that it does not use your content to train its models.<br><br>
-If you do not want your financial data used for training or potentially read by a human, use a paid API key, or do not enable the AI features at all. Google's terms may change; the governing references are
+Because the key in use is now the developer's, that tier is <strong>our</strong> choice rather than yours &mdash; and you have no way to verify it yourself. So treat model training and human review as real possibilities, and do not enable the AI features unless you are willing to accept them. Google's terms may change; the governing references are
 <a href="https://ai.google.dev/gemini-api/terms" rel="noopener">ai.google.dev/gemini-api/terms</a> and
 <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a>.
 </div>
 <p>You can withdraw consent at any time via <em>Settings → AI Data Sharing</em>. Withdrawal takes effect immediately for all subsequent requests. It does not recall data already sent to Google; for that you must contact Google directly.</p>
 
-<h3>6.2 Exchange rate CDN</h3>
-<p>To refresh currency rates the app fetches a public rate file from <code>cdn.jsdelivr.net</code>. That request <strong>carries none of your financial data</strong>, only the base currency code you selected. As with any HTTP request, the CDN provider can see your IP address and the time of the request.</p>
+<h3>6.2 PocketHero&rsquo;s own server (Supabase), only if you enable the AI features</h3>
+<p>As of this version, AI requests no longer travel from your device straight to Google. They are sent first to a function of ours running on <strong>Supabase</strong> (Supabase, Inc.), and that function forwards them to Google using the developer&rsquo;s API key. The Supabase servers we use are <strong>outside Indonesia</strong>, so the transfer basis stated in Section 6.1 applies equally to this leg.</p>
+<p><strong>Why a server at all?</strong> Because the API key is now the developer&rsquo;s and we pay for it. With no single point that can count and refuse, anyone who takes the app apart could use that key as a free AI service billed to us.</p>
+<p><strong>What is stored there:</strong></p>
+<ul>
+<li>An anonymous user identifier (a random UUID) created when your device registers. It is linked to no name, email, phone number, store account, or device identifier.</li>
+<li>Per identifier, per day: the number of AI requests, and the input and output token counts &mdash; usage figures, not content.</li>
+<li><strong>A record of your AI consent.</strong> Per identifier: the version number of the consent text you accepted, the time your device says you tapped Agree, and the time our server first saw that consent. This is not there to identify you; it is evidence that the AI features were never switched on without consent &mdash; our duty as data controller under Article 20 UU PDP. None of your request content is recorded with it.</li>
+<li><strong>An IP address, briefly.</strong> Supabase records your device&rsquo;s IP address when it registers, as authentication services generally do. We have no use for it, so it is deleted automatically <strong>every hour</strong>. Your IP is therefore held for at most one hour, then permanently removed and no longer linkable to the usage figures above.</li>
+</ul>
+<p><strong>What is NOT stored there:</strong> your chat messages, photos, imported files, wallets, transactions, budgets, goals, debts, stock holdings, or the model&rsquo;s replies. That data passes through the server as traffic and is forwarded on; it is not written to any database of ours, and <strong>does not appear in our server logs</strong> either &mdash; those hold only a timestamp, the endpoint address, and a status code, never the request body. We cannot read back yesterday&rsquo;s conversation, because we hold no copy of it. What we ask you to understand honestly: while that data <em>is</em> passing through, it is technically inside our infrastructure &mdash; the guarantee here is a promise and a design, not a technical impossibility.</p>
+<p><strong>Supabase&rsquo;s role.</strong> Supabase, Inc. runs infrastructure on our instructions and does not use that data for its own purposes; in UU PDP terms Supabase is a <strong>processor</strong> and we remain the controller. Its privacy policy: <a href="https://supabase.com/privacy" rel="noopener">supabase.com/privacy</a>.</p>
+<p><strong>Deletion.</strong> Uninstalling the app does not delete those counter rows from our server, because we have no way to know which device was removed. You can ask for their deletion via the contact address in Section 2; as they hold only a random identifier, numbers, and a consent record, deleting them removes nothing you can see in the app. One thing to know: deleting the consent record also deletes the evidence that you ever gave consent, so we log the deletion request itself in its place.</p>
 
-<h3>6.3 Backups and exports you make yourself</h3>
+<h3>6.3 Currency rates</h3>
+<p>To convert balances between currencies the app fetches a rate table from <strong>PocketHero&rsquo;s own server</strong> (Supabase). It used to fetch that file directly from the third-party CDN <code>cdn.jsdelivr.net</code>; as of 2 September 2026 it no longer does, so no third party is involved in a rate update.</p>
+<p>The request is <strong>empty</strong>: it carries none of your financial data, not the currency you selected, and no identifier of any kind &mdash; the app asks for the whole rate table and does the arithmetic on your device. Unlike Sections 6.1 and 6.2, this request needs no AI consent and carries no sign-in session. As with any HTTP request, our server receives your IP address and the time of the request; neither is written to any database of ours (see Section 6.2 on what our logs hold).</p>
+<p>The rates themselves are the same for every user and are tied to no one. The app stores them on your device and refreshes them only once that copy is more than 24 hours old.</p>
+
+<h3>6.4 Backups and exports you make yourself</h3>
 <p>Backup &amp; Restore lets you save a copy of your data to a location <strong>you choose</strong>, and export to CSV or JSON.</p>
 <div class="box">
 <strong>A backup file is encrypted with a password you choose</strong> when you create it, on both Android and iOS, and that password is the only way to open it again. We cannot recover it: if you forget it, the file is permanently unreadable. CSV and JSON exports remain unencrypted on both platforms.<br><br>
 <strong>CSV and JSON exports are never encrypted</strong>, on either platform. The moment you save any of these files to Google Drive, iCloud Drive, an SD card, your downloads folder, or send one through a messaging app, it leaves every protection this app provides and becomes subject to that destination service's privacy policy. Keep them only where you trust.
 </div>
 
-<h3>6.4 Operating system services</h3>
+<h3>6.5 Operating system services</h3>
 <ul>
 <li><strong>Camera and photo library</strong> open only when you tap scan or attach. The app receives only the photo you pick.</li>
 <li><strong>Biometrics</strong> (fingerprint or Face ID) are handled entirely by the operating system. The app never sees your biometric data.</li>
@@ -358,14 +393,15 @@ If you do not want your financial data used for training or potentially read by 
 </ul>
 
 
-<h3>6.5 Minimum version check</h3>
+<h3>6.6 Minimum version check</h3>
 <p>On launch, the app fetches a small file from <code>zentrasolution.github.io</code> (GitHub Pages) containing only the lowest app version we still support. This request <strong>carries no data about you</strong> &mdash; no financial data, no device identifier, no installation ID. The app simply reads that number and compares it against the version installed on your device. As with any HTTP request, GitHub as the hosting provider can see your IP address and the time of the request. The legal documents you open from Settings are served from the same address.</p>
 <h2>7. Legal Basis and Purpose of Processing</h2>
 <table>
 <tr><th>Activity</th><th>Purpose</th><th>Legal basis (UU PDP Art. 20)</th></tr>
 <tr><td>Storing financial records on the device</td><td>Delivering the core function of the app you installed</td><td>Performance of a contract with the data subject, Art. 20(2)(b)</td></tr>
 <tr><td>Storing preferences and profile</td><td>Presenting the app the way you chose</td><td>Performance of a contract, Art. 20(2)(b)</td></tr>
-<tr><td>Sending data to Google Gemini</td><td>Delivering the AI feature you requested</td><td><strong>Valid, explicit, specific consent</strong>, Art. 20(2)(a) in conjunction with Art. 22</td></tr>
+<tr><td>Counting AI usage per anonymous identifier on our server</td><td>Limiting abuse of the AI capacity we pay for</td><td><strong>Legitimate interest</strong>, Art. 20(2)(f)</td></tr>
+<tr><td>Sending data to our server and on to Google Gemini</td><td>Delivering the AI feature you requested</td><td><strong>Valid, explicit, specific consent</strong>, Art. 20(2)(a) in conjunction with Art. 22</td></tr>
 <tr><td>Fetching exchange rates</td><td>Currency conversion</td><td>Performance of a contract, Art. 20(2)(b)</td></tr>
 <tr><td>Credit card due date reminders</td><td>A feature you enable yourself</td><td>Consent, Art. 20(2)(a)</td></tr>
 </table>
@@ -376,7 +412,7 @@ If you do not want your financial data used for training or potentially read by 
 <table>
 <tr><th>Action</th><th>What is deleted</th></tr>
 <tr><td>Deleting an individual record in the app</td><td>That record, immediately and permanently</td></tr>
-<tr><td><em>Settings → Clear All App Data</em></td><td>All financial data, all chat history including the photos in it, the stored Gemini API key, and your display name along with any profile and background photos you chose. Default wallets and categories are recreated so the app remains usable.</td></tr>
+<tr><td><em>Settings → Clear All App Data</em></td><td>All financial data, all chat history including the photos in it, the stored AI session token, and your display name along with any profile and background photos you chose. Default wallets and categories are recreated so the app remains usable.</td></tr>
 <tr><td>Uninstalling the app</td><td>The entire local database and preferences</td></tr>
 </table>
 <p><strong>One deliberate exception:</strong> Clear All App Data does not turn off your AI consent. Deleting data is not the same as withdrawing consent, and silently revoking it would confront you with a consent dialog you never asked for on next use. To withdraw consent, use the <em>AI Data Sharing</em> switch in Settings.</p>
@@ -405,7 +441,7 @@ If you do not want your financial data used for training or potentially read by 
 <li>Android auto-backup is disabled (<code>allowBackup="false"</code>), so the database is not copied to Google's cloud</li>
 <li>On iOS the database files are excluded from iCloud/iTunes backup and given the <code>NSFileProtectionCompleteUntilFirstUserAuthentication</code> protection class</li>
 <li><strong>The entire database is encrypted at rest (SQLCipher, AES-256), on both Android and iOS</strong>. Its key is generated randomly on your device and protected by the Android Keystore on Android or the iOS Keychain on iOS; the key never leaves the device and is never known to us</li>
-<li>The Gemini API key is encrypted with Android Keystore (AES-GCM) or the iOS Keychain</li>
+<li>The AI session token is encrypted with Android Keystore (AES-GCM) or the iOS Keychain</li>
 <li>All network communication uses HTTPS</li>
 <li>An optional biometric app lock is available</li>
 <li>While the biometric lock is on, Android suppresses screenshots and the app's preview in the recent-apps list, so its contents cannot be read from there without unlocking</li>
@@ -413,7 +449,7 @@ If you do not want your financial data used for training or potentially read by 
 <div class="box">
 <strong>A limitation we state openly.</strong> Database encryption now applies on both Android and iOS. CSV and JSON exports remain ordinary unencrypted files on both platforms, because they are meant to be opened in other apps. The measures above are effective against cloud-backup leaks, against a lost device that is locked, and against reading the database file directly. They do <strong>not</strong> protect against a rooted or jailbroken device, or forensic extraction while the device is unlocked and the app is running &mdash; in that state the app must be able to unlock its own data. We recommend enabling your device screen lock and the app's biometric lock.
 </div>
-<p>Because there is no server and no user data on the developer's side, there is no centralised breach scenario triggering the 3x24-hour notification duty in Article 46 UU PDP. If a security flaw in the app that could expose on-device data is ever found, we will disclose it through an update to this page and the app release notes.</p>
+<p>Our server stores no financial records &mdash; only an anonymous identifier and usage figures (Section 6.2) &mdash; so a breach of that server would expose nobody&rsquo;s financial data. We nonetheless no longer claim that a centralised breach is impossible: should a personal data protection failure occur on that server, we will notify as required by the 3x24-hour duty in Article 46 UU PDP. The same applies if a security flaw in the app that could expose on-device data is found: we will disclose it through an update to this page and the app release notes.</p>
 
 <h2>11. Minimum Age</h2>
 <p>This app is intended for users aged <strong>18 and over</strong> and is not designed for children. We do not knowingly collect children's data. Under Articles 25 and 26 UU PDP, processing children's data requires parental or guardian consent. If you are under 18, do not use the AI features without your parent's or guardian's consent.</p>
