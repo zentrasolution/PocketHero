@@ -32,12 +32,12 @@ ul{padding-left:22px}
 
 <h1>Kebijakan Privasi</h1>
 <p class="meta">Aplikasi <strong>Pocket Hero</strong> (Android &amp; iOS)<br>
-Versi dokumen 1.0 · Berlaku sejak <strong>26 Agustus 2026</strong> · Terakhir diperbarui <strong>1 September 2026</strong></p>
+Versi dokumen 1.0 · Berlaku sejak <strong>26 Agustus 2026</strong> · Terakhir diperbarui <strong>2 September 2026</strong></p>
 
 <h2>1. Ringkasan</h2>
 <p>Pocket Hero adalah aplikasi pencatat keuangan pribadi yang berjalan sepenuhnya di perangkat Anda.</p>
 <ul>
-<li><strong>Catatan keuangan Anda tidak pernah disimpan di server kami.</strong> Kami mengoperasikan satu server, dan perannya sempit: ia hanya meneruskan permintaan fitur AI ke Google dan menghitung berapa banyak permintaan yang dibuat tiap perangkat. Isi permintaan itu tidak disimpan di sana. Lihat Bagian 6.2.</li>
+<li><strong>Catatan keuangan Anda tidak pernah disimpan di server kami.</strong> Kami mengoperasikan satu server, dan perannya sempit: ia meneruskan permintaan fitur AI ke Google, menghitung berapa banyak permintaan yang dibuat tiap perangkat, dan menyimpan bukti langganan bagi yang berlangganan. Isi permintaan itu tidak disimpan di sana. Lihat Bagian 6.2 dan 6.7.</li>
 <li><strong>Tidak ada analitik, pelacak, iklan, atau pelaporan kerusakan (crash reporting) apa pun</strong> di dalam aplikasi ini.</li>
 <li>Seluruh catatan keuangan Anda disimpan di basis data lokal pada perangkat Anda sendiri.</li>
 <li><strong>Fitur AI bersifat opsional dan mati secara bawaan.</strong> Fitur ini hanya aktif setelah Anda menyetujuinya secara eksplisit. Seluruh fitur lain berfungsi tanpa koneksi internet.</li>
@@ -144,6 +144,7 @@ Karena kunci yang dipakai sekarang milik pengembang, tingkat layanan itu <strong
 <li>Sebuah pengenal pengguna anonim (UUID acak) yang dibuat saat perangkat Anda mendaftar. Pengenal ini tidak terhubung ke nama, email, nomor telepon, akun toko aplikasi, maupun pengenal perangkat mana pun.</li>
 <li>Untuk pengenal itu, per hari: jumlah permintaan AI, serta jumlah token masukan dan keluaran &mdash; angka pemakaian, bukan isinya.</li>
 <li><strong>Catatan persetujuan AI.</strong> Untuk pengenal itu: nomor versi teks persetujuan yang Anda setujui, waktu Anda menekan Setuju menurut perangkat Anda, dan waktu server kami pertama kali melihat persetujuan itu. Ini bukan untuk mengenali Anda, melainkan bukti bahwa fitur AI tidak pernah dinyalakan tanpa persetujuan &mdash; kewajiban kami sebagai pengendali data menurut Pasal 20 UU PDP. Tidak ada isi permintaan Anda yang ikut tercatat.</li>
+<li><strong>Bukti langganan, bila Anda membeli.</strong> Untuk pengenal itu: token pembelian dari Google Play, id produk yang Anda beli, dan tanggal berakhirnya. Rinciannya pada Bagian 6.7.</li>
 <li><strong>Alamat IP, sementara.</strong> Supabase mencatat alamat IP perangkat Anda saat mendaftar, sebagaimana lazimnya layanan autentikasi. Kami tidak memakainya untuk apa pun, jadi kami menghapusnya otomatis <strong>setiap jam</strong>. Artinya IP Anda paling lama tersimpan satu jam, lalu hilang permanen dan tidak lagi dapat dihubungkan dengan angka pemakaian di atas.</li>
 </ul>
 <p><strong>Apa yang TIDAK disimpan di server itu:</strong> isi pesan chat Anda, foto, berkas yang Anda impor, dompet, transaksi, anggaran, target, utang/piutang, kepemilikan saham, maupun jawaban model. Data itu melewati server sebagai lalu lintas dan diteruskan; ia tidak dituliskan ke basis data mana pun milik kami, dan <strong>tidak ikut tercatat di log server</strong> &mdash; log kami hanya berisi waktu, alamat endpoint, dan kode status, tanpa isi permintaan. Kami tidak dapat membaca kembali percakapan Anda kemarin, karena tidak ada salinannya pada kami. Yang kami minta Anda pahami dengan jujur: selama data itu <em>sedang</em> lewat, secara teknis ia berada di infrastruktur kami &mdash; jaminan di sini adalah janji dan rancangan, bukan ketidakmampuan teknis.</p>
@@ -172,6 +173,12 @@ Karena kunci yang dipakai sekarang milik pengembang, tingkat layanan itu <strong
 
 <h3>6.6 Pemeriksaan versi minimum</h3>
 <p>Saat dibuka, aplikasi mengambil sebuah berkas kecil dari <code>zentrasolution.github.io</code> (GitHub Pages) yang hanya berisi nomor versi minimum yang masih kami dukung. Permintaan ini <strong>tidak memuat data apa pun tentang Anda</strong> &mdash; tidak ada data keuangan, tidak ada pengenal perangkat, dan tidak ada nomor pemasangan. Aplikasi hanya membaca angka tersebut lalu membandingkannya dengan versi yang terpasang di perangkat Anda. Seperti setiap permintaan HTTP, GitHub sebagai penyedia hosting dapat melihat alamat IP dan waktu permintaan Anda. Berkas legal yang Anda buka dari Pengaturan dilayani dari alamat yang sama.</p>
+
+<h3>6.7 Pembelian dan langganan</h3>
+<p>Fitur AI dijual sebagai langganan. Seluruh pembayaran diproses oleh <strong>Google Play</strong> (Google LLC). Kami tidak pernah menerima, memproses, atau menyimpan nomor kartu maupun data pembayaran Anda, dan kami tidak melihat nama atau alamat email akun Google Anda.</p>
+<p><strong>Yang kami simpan hanyalah bukti bahwa langganan itu ada:</strong> token pembelian dari Google, id produk, dan tanggal berakhirnya, tersimpan di server kami (Bagian 6.2) dan terhubung ke pengenal anonim perangkat Anda &mdash; bukan ke identitas Anda. Aplikasi mengirim token itu ke server kami, lalu server kami menanyakannya langsung ke Google untuk memastikan langganan tersebut benar-benar aktif; kami tidak pernah mempercayai klaim dari aplikasi itu sendiri. Riwayat pembelian selengkapnya tetap berada di Google Play dan tidak kami salin.</p>
+<p>Pembatalan dan pengembalian dana berlangsung di Google Play; server kami baru mengetahuinya pada pemeriksaan berikutnya. Anda dapat meminta penghapusan catatan langganan itu lewat alamat kontak pada Bagian 2, dengan satu konsekuensi yang perlu Anda ketahui: catatan itulah satu-satunya bukti hak Anda, sehingga menghapusnya menutup akses fitur AI meskipun langganan Anda masih berjalan.</p>
+
 <h2>7. Dasar Hukum dan Tujuan Pemrosesan</h2>
 <table>
 <tr><th>Aktivitas</th><th>Tujuan</th><th>Dasar hukum (UU PDP Pasal 20)</th></tr>
@@ -179,6 +186,7 @@ Karena kunci yang dipakai sekarang milik pengembang, tingkat layanan itu <strong
 <tr><td>Menyimpan preferensi dan profil</td><td>Menyesuaikan tampilan sesuai pilihan Anda</td><td>Pemenuhan perjanjian, Pasal 20 ayat (2) huruf b</td></tr>
 <tr><td>Menghitung pemakaian AI per pengenal anonim di server kami</td><td>Membatasi penyalahgunaan dan menanggung biaya layanan AI yang kami bayar</td><td><strong>Kepentingan yang sah</strong>, Pasal 20 ayat (2) huruf f</td></tr>
 <tr><td>Mengirim data ke server kami lalu ke Google Gemini</td><td>Menjalankan fitur AI yang Anda minta</td><td><strong>Persetujuan yang sah, eksplisit, dan spesifik</strong>, Pasal 20 ayat (2) huruf a jo. Pasal 22</td></tr>
+<tr><td>Menyimpan dan memverifikasi bukti langganan</td><td>Memberi akses fitur AI yang Anda beli, dan mencegah satu langganan dipakai banyak orang</td><td>Pemenuhan perjanjian dengan subjek data, Pasal 20 ayat (2) huruf b</td></tr>
 <tr><td>Mengambil kurs mata uang</td><td>Konversi antar mata uang</td><td>Pemenuhan perjanjian, Pasal 20 ayat (2) huruf b</td></tr>
 <tr><td>Pengingat jatuh tempo kartu kredit</td><td>Fitur yang Anda aktifkan sendiri</td><td>Persetujuan, Pasal 20 ayat (2) huruf a</td></tr>
 </table>
@@ -226,7 +234,7 @@ Karena kunci yang dipakai sekarang milik pengembang, tingkat layanan itu <strong
 <div class="box">
 <strong>Keterbatasan yang kami sampaikan secara terbuka.</strong> Enkripsi basis data kini berlaku di Android dan iOS. Ekspor CSV dan JSON tetap berupa berkas biasa tanpa enkripsi di kedua platform, karena memang dimaksudkan untuk dibuka di aplikasi lain. Perlindungan di atas efektif terhadap kebocoran lewat cadangan cloud, terhadap perangkat yang hilang dalam keadaan terkunci, dan terhadap pembacaan berkas basis data secara langsung. Perlindungan tersebut <strong>tidak</strong> melindungi dari perangkat yang di-root atau di-jailbreak, maupun dari ekstraksi forensik saat perangkat dalam keadaan terbuka dan aplikasi sedang berjalan &mdash; pada kondisi itu aplikasi memang harus dapat membuka kuncinya sendiri. Kami menyarankan Anda mengaktifkan kunci layar perangkat dan kunci biometrik aplikasi.
 </div>
-<p>Server kami tidak menyimpan satu pun catatan keuangan &mdash; yang ada di sana hanya pengenal anonim dan angka pemakaian (Bagian 6.2) &mdash; sehingga kebocoran pada server itu tidak mengungkap data keuangan siapa pun. Meski begitu, kami tidak lagi menyatakan bahwa skenario kebocoran terpusat mustahil: bila terjadi kegagalan pelindungan data pribadi pada server itu, kami akan memberitahukannya sesuai kewajiban 3 x 24 jam pada Pasal 46 UU PDP. Hal yang sama berlaku bila ditemukan celah keamanan pada aplikasi yang berpotensi mengungkap data di perangkat: kami mengumumkannya melalui pembaruan halaman ini dan catatan rilis aplikasi.</p>
+<p>Server kami tidak menyimpan satu pun catatan keuangan &mdash; yang ada di sana hanya pengenal anonim, angka pemakaian, dan bukti langganan (Bagian 6.2 dan 6.7) &mdash; sehingga kebocoran pada server itu tidak mengungkap data keuangan siapa pun. Meski begitu, kami tidak lagi menyatakan bahwa skenario kebocoran terpusat mustahil: bila terjadi kegagalan pelindungan data pribadi pada server itu, kami akan memberitahukannya sesuai kewajiban 3 x 24 jam pada Pasal 46 UU PDP. Hal yang sama berlaku bila ditemukan celah keamanan pada aplikasi yang berpotensi mengungkap data di perangkat: kami mengumumkannya melalui pembaruan halaman ini dan catatan rilis aplikasi.</p>
 
 <h2>11. Batas Usia</h2>
 <p>Aplikasi ini ditujukan untuk pengguna berusia <strong>18 tahun ke atas</strong> dan tidak dirancang untuk anak. Kami tidak dengan sengaja mengumpulkan data anak. Sesuai Pasal 25 dan Pasal 26 UU PDP, pemrosesan data anak memerlukan persetujuan orang tua atau wali. Jika Anda berusia di bawah 18 tahun, jangan gunakan fitur AI tanpa persetujuan orang tua atau wali Anda.</p>
@@ -255,13 +263,13 @@ Karena kunci yang dipakai sekarang milik pengembang, tingkat layanan itu <strong
 
 <h1 id="english">Privacy Policy</h1>
 <p class="meta"><strong>Pocket Hero</strong> app (Android &amp; iOS)<br>
-Document version 1.0 · Effective <strong>26 August 2026</strong> · Last updated <strong>1 September 2026</strong><br>
+Document version 1.0 · Effective <strong>26 August 2026</strong> · Last updated <strong>2 September 2026</strong><br>
 This English text is a translation. In case of any conflict, <strong>the Indonesian text above prevails</strong>.</p>
 
 <h2>1. Summary</h2>
 <p>Pocket Hero is a personal finance app that runs entirely on your device.</p>
 <ul>
-<li><strong>Your financial records are never stored on our server.</strong> We do operate one server, and its role is narrow: it forwards AI requests to Google and counts how many requests each device makes. The contents of those requests are not stored there. See Section 6.2.</li>
+<li><strong>Your financial records are never stored on our server.</strong> We do operate one server, and its role is narrow: it forwards AI requests to Google, counts how many requests each device makes, and holds proof of a subscription for those who buy one. The contents of those requests are not stored there. See Sections 6.2 and 6.7.</li>
 <li><strong>There is no analytics, tracking, advertising, or crash reporting</strong> of any kind in this app.</li>
 <li>All of your financial records are stored in a local database on your own device.</li>
 <li><strong>The AI features are optional and off by default.</strong> They turn on only after you explicitly agree. Every other feature works with no internet connection at all.</li>
@@ -367,6 +375,7 @@ Because the key in use is now the developer's, that tier is <strong>our</strong>
 <li>An anonymous user identifier (a random UUID) created when your device registers. It is linked to no name, email, phone number, store account, or device identifier.</li>
 <li>Per identifier, per day: the number of AI requests, and the input and output token counts &mdash; usage figures, not content.</li>
 <li><strong>A record of your AI consent.</strong> Per identifier: the version number of the consent text you accepted, the time your device says you tapped Agree, and the time our server first saw that consent. This is not there to identify you; it is evidence that the AI features were never switched on without consent &mdash; our duty as data controller under Article 20 UU PDP. None of your request content is recorded with it.</li>
+<li><strong>Proof of a subscription, if you buy one.</strong> Per identifier: the purchase token from Google Play, the product id you bought, and its expiry date. See Section 6.7.</li>
 <li><strong>An IP address, briefly.</strong> Supabase records your device&rsquo;s IP address when it registers, as authentication services generally do. We have no use for it, so it is deleted automatically <strong>every hour</strong>. Your IP is therefore held for at most one hour, then permanently removed and no longer linkable to the usage figures above.</li>
 </ul>
 <p><strong>What is NOT stored there:</strong> your chat messages, photos, imported files, wallets, transactions, budgets, goals, debts, stock holdings, or the model&rsquo;s replies. That data passes through the server as traffic and is forwarded on; it is not written to any database of ours, and <strong>does not appear in our server logs</strong> either &mdash; those hold only a timestamp, the endpoint address, and a status code, never the request body. We cannot read back yesterday&rsquo;s conversation, because we hold no copy of it. What we ask you to understand honestly: while that data <em>is</em> passing through, it is technically inside our infrastructure &mdash; the guarantee here is a promise and a design, not a technical impossibility.</p>
@@ -395,6 +404,12 @@ Because the key in use is now the developer's, that tier is <strong>our</strong>
 
 <h3>6.6 Minimum version check</h3>
 <p>On launch, the app fetches a small file from <code>zentrasolution.github.io</code> (GitHub Pages) containing only the lowest app version we still support. This request <strong>carries no data about you</strong> &mdash; no financial data, no device identifier, no installation ID. The app simply reads that number and compares it against the version installed on your device. As with any HTTP request, GitHub as the hosting provider can see your IP address and the time of the request. The legal documents you open from Settings are served from the same address.</p>
+
+<h3>6.7 Purchases and subscriptions</h3>
+<p>The AI features are sold as a subscription. All payments are processed by <strong>Google Play</strong> (Google LLC). We never receive, process, or store your card or payment details, and we do not see the name or email address on your Google account.</p>
+<p><strong>All we store is proof that the subscription exists:</strong> the purchase token from Google, the product id, and its expiry date, held on our server (Section 6.2) against your device&rsquo;s anonymous identifier &mdash; not against your identity. The app sends that token to our server, and our server asks Google directly whether the subscription is genuinely active; we never trust a claim made by the app itself. The full purchase history stays with Google Play and is not copied here.</p>
+<p>Cancellations and refunds happen in Google Play; our server only learns of them at the next check. You can ask us to delete that subscription record via the contact address in Section 2, with one consequence worth knowing: it is the only proof of your entitlement, so deleting it closes off the AI features even while your subscription is still running.</p>
+
 <h2>7. Legal Basis and Purpose of Processing</h2>
 <table>
 <tr><th>Activity</th><th>Purpose</th><th>Legal basis (UU PDP Art. 20)</th></tr>
@@ -449,7 +464,7 @@ Because the key in use is now the developer's, that tier is <strong>our</strong>
 <div class="box">
 <strong>A limitation we state openly.</strong> Database encryption now applies on both Android and iOS. CSV and JSON exports remain ordinary unencrypted files on both platforms, because they are meant to be opened in other apps. The measures above are effective against cloud-backup leaks, against a lost device that is locked, and against reading the database file directly. They do <strong>not</strong> protect against a rooted or jailbroken device, or forensic extraction while the device is unlocked and the app is running &mdash; in that state the app must be able to unlock its own data. We recommend enabling your device screen lock and the app's biometric lock.
 </div>
-<p>Our server stores no financial records &mdash; only an anonymous identifier and usage figures (Section 6.2) &mdash; so a breach of that server would expose nobody&rsquo;s financial data. We nonetheless no longer claim that a centralised breach is impossible: should a personal data protection failure occur on that server, we will notify as required by the 3x24-hour duty in Article 46 UU PDP. The same applies if a security flaw in the app that could expose on-device data is found: we will disclose it through an update to this page and the app release notes.</p>
+<p>Our server stores no financial records &mdash; only an anonymous identifier, usage figures, and subscription proof (Sections 6.2 and 6.7) &mdash; so a breach of that server would expose nobody&rsquo;s financial data. We nonetheless no longer claim that a centralised breach is impossible: should a personal data protection failure occur on that server, we will notify as required by the 3x24-hour duty in Article 46 UU PDP. The same applies if a security flaw in the app that could expose on-device data is found: we will disclose it through an update to this page and the app release notes.</p>
 
 <h2>11. Minimum Age</h2>
 <p>This app is intended for users aged <strong>18 and over</strong> and is not designed for children. We do not knowingly collect children's data. Under Articles 25 and 26 UU PDP, processing children's data requires parental or guardian consent. If you are under 18, do not use the AI features without your parent's or guardian's consent.</p>
